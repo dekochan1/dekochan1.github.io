@@ -11,13 +11,15 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <canvas id="grid"></canvas>
+  <div class="nebula"><i class="beam b1"></i><i class="beam b2"></i></div>
+  <div class="grain"></div>
   <div class="cursor-glow" id="glow"></div>
   <div class="scroll-progress" id="progress"></div>
 
   <nav class="nav">
     <a class="nav-logo" href="#top">SATAN<span>.dev</span></a>
     <div class="nav-links">
+      <a href="#about">Обо мне</a>
       <a href="#stack">Стек</a>
       <a href="#services">Услуги</a>
       <a href="#projects">Проекты</a>
@@ -30,7 +32,7 @@
   <header class="hero" id="top">
     <p class="hero-tag"><span class="dot"></span> открыт для заказов</p>
     <h1>Привет, я <span class="grad">SATAN</span><br />пишу Telegram-ботов</h1>
-    <p class="hero-sub">Боты, которые приносят деньги, а не просто работают: фикс цены и срока, деплой на VPS и 30 дней поддержки включены.</p>
+    <p class="hero-sub">Мои боты работают, пока ты спишь. Без глюков, без «потом починю». Смотри кейсы — там цифры, а не обещания.</p>
     <p class="typed-line"><span class="prompt">$</span> <span id="typed"></span><span class="caret"></span></p>
     <div class="hero-btns">
       <a class="btn btn-primary" href="#projects">Смотреть проекты</a>
@@ -43,8 +45,13 @@
     </div>
   </header>
 
+  <section id="about" class="section reveal">
+    <h2>Обо мне</h2>
+    <p class="about-text">Я <b>SATAN</b> — разработчик, живущий в экосистеме Telegram. Делаю ботов, мини-приложения и автоматизацию, которые не лежат мёртвым грузом, а реально тащат бизнес: продажи, рассылки, порядок в чатах.</p>
+    <p class="about-text">Думаю на <b>Python</b>, верстаю на <b>JavaScript</b>, а если задача требует — берусь за <b>C++</b> и <b>C#</b>. Не прыгаю по стеку ради моды: инструмент подбираю под задачу, а не наоборот.</p>
+  </section>
+
   <section id="stack" class="section reveal">
-    <p class="kicker">// 01 — стек</p>
     <h2>Чем я работаю</h2>
     <div class="badges">
       <span class="badge"><i class="devicon-python-plain"></i>Python</span>
@@ -60,55 +67,53 @@
   </section>
 
   <section id="services" class="section reveal">
-    <p class="kicker">// 02 — услуги</p>
     <h2>Не только код</h2>
     <div class="services">
-      <div class="service"><b>01</b><h3>Боты под ключ</h3><p>От идеи и ТЗ до запуска: проектирование сценариев, разработка, тесты.</p></div>
-      <div class="service"><b>02</b><h3>Парсинг и автоматизация</h3><p>Сбор данных, мониторинг конкурентов и цен, автопостинг, отчёты.</p></div>
-      <div class="service"><b>03</b><h3>Деплой и поддержка</h3><p>VPS, автоперезапуск, бэкапы, мониторинг падений. Не бросаю после сдачи.</p></div>
-      <div class="service"><b>04</b><h3>Аудит и доработка</h3><p>Разберу чужого бота, ускорю, залатаю баги, добавлю функции.</p></div>
-      <div class="service"><b>05</b><h3>Консультации</h3><p>Помогу выбрать стек, оценить бюджет и не переплатить подрядчикам.</p></div>
-      <div class="service"><b>06</b><h3>Лендинги-визитки</h3><p>Быстрые тёмные лендинги под бота или услугу — как этот сайт.</p></div>
+      <div class="service"><b>01</b><h3>Боты под ключ</h3><p>Придумаю, напишу, запущу. Ты только скажешь, что надо.</p></div>
+      <div class="service"><b>02</b><h3>Парсинг и автоматизация</h3><p>Вытащу данные откуда угодно. Конкуренты сами всё расскажут.</p></div>
+      <div class="service"><b>03</b><h3>Деплой и поддержка</h3><p>Поставлю на VPS, прикручу автоперезапуск. Упадёт — встанет само.</p></div>
+      <div class="service"><b>04</b><h3>Аудит и доработка</h3><p>Чужой код? Разберу, найду слабые места, починю.</p></div>
+      <div class="service"><b>05</b><h3>Консультации</h3><p>Скажу как есть: сколько стоит, сколько ждать, где тебя хотят нагреть.</p></div>
+      <div class="service"><b>06</b><h3>Лендинги-визитки</h3><p>Тёмные, быстрые, злые. Как этот сайт.</p></div>
     </div>
   </section>
 
   <section id="projects" class="section reveal">
-    <p class="kicker">// 03 — кейсы</p>
-    <h2>Крупные кейсы</h2>
-    <div class="cards cases">
-      <article class="card tilt">
-        <div class="card-top"><span class="lang">Python · Telethon · SQLite</span><span class="stars">охват 200+ чатов</span></div>
-        <h3>Рассылка-Бот</h3>
-        <p>Юзербот для сети из 200+ чатов: отложенный постинг, умные лимиты против спам-блока, ротация аккаунтов, живая статистика охвата. Держит 50 тыс. сообщений в сутки без банов.</p>
-        <div class="case-metrics"><div><b>50k</b><span>сообщений/сутки</span></div><div><b>0</b><span>банов за полгода</span></div><div><b>x4</b><span>рост охвата</span></div></div>
-      </article>
-      <article class="card tilt">
-        <div class="card-top"><span class="lang">Python · aiogram · PostgreSQL</span><span class="stars">онлайн-оплата</span></div>
-        <h3>Магазин-автомат</h3>
-        <p>Полный цикл продаж в Telegram: каталог на 500+ товаров, корзина, оплата, автовыдача цифровых товаров, админка с аналитикой и рассылками по сегментам. Владелец не касается рутины вообще.</p>
-        <div class="case-metrics"><div><b>500+</b><span>товаров</span></div><div><b>24/7</b><span>продажи без людей</span></div><div><b>-90%</b><span>ручной работы</span></div></div>
-      </article>
-      <article class="card tilt">
-        <div class="card-top"><span class="lang">Python · Telethon · SQLite</span><span class="stars">save-mod</span></div>
-        <h3>Сейв-мод</h3>
-        <p>Юзербот-сторож: перехватывает удалённые сообщения раньше удаления — текст, фото, видео, голосовые и файлы. Команды для просмотра сохранённого, история правок, избранное и быстрый поиск по архиву. Ничего важное больше не потеряется.</p>
-        <div class="case-metrics"><div><b>100%</b><span>перехват удалённого</span></div><div><b>6</b><span>типов контента</span></div><div><b>1 сек</b><span>поиск по архиву</span></div></div>
-      </article>
+    <h2>Проекты</h2>
+    <div class="work-list">
+      <a class="work-row" href="#contact">
+        <div><h3>Старс-шоп</h3><p>Покупка Telegram Stars через мини-приложение: пакеты, оплата, история заказов.</p></div>
+        <span class="work-tag">Web App · Stars</span><span class="work-arrow">→</span>
+      </a>
+      <a class="work-row" href="#contact">
+        <div><h3>Сейв-мод</h3><p>Архив удалённого из чатов: текст, фото, войсы и файлы. Команды, история правок, поиск за секунду.</p></div>
+        <span class="work-tag">Python · Telethon</span><span class="work-arrow">→</span>
+      </a>
+      <a class="work-row" href="#contact">
+        <div><h3>Копия сайта Tonkeeper</h3><p>Воссоздание лендинга кошелька Tonkeeper — дизайн, вёрстка и анимации оригинала.</p></div>
+        <span class="work-tag">Web · Clone</span><span class="work-arrow">→</span>
+      </a>
+      <a class="work-row" href="#contact">
+        <div><h3>Парсеры NFT подарков</h3><p>Сбор и мониторинг NFT-подарков — с маркета и без. Фильтры, уведомления, автоматизация.</p></div>
+        <span class="work-tag">Python · Parser</span><span class="work-arrow">→</span>
+      </a>
+      <a class="work-row" href="#contact">
+        <div><h3>Боты для рассылок по чатам</h3><p>Автоматические рассылки в Telegram-чаты: массовая отправка, управление списками, гибкие настройки.</p></div>
+        <span class="work-tag">Telegram · Bot</span><span class="work-arrow">→</span>
+      </a>
     </div>
   </section>
 
   <section id="exp" class="section reveal">
-    <p class="kicker">// 04 — опыт</p>
     <h2>Путь</h2>
     <div class="timeline">
-      <div class="t-item"><span>2024</span><div><h3>Первые скрипты</h3><p>Python, парсинг, мелкие автоматизации для себя.</p></div></div>
-      <div class="t-item"><span>2025</span><div><h3>Telegram-боты</h3><p>Telethon и aiogram: рассылки, магазины, админки. Первые заказы.</p></div></div>
-      <div class="t-item"><span>2026</span><div><h3>Фриланс</h3><p>Проекты под ключ: от ТЗ до деплоя на VPS + поддержка.</p></div></div>
+      <div class="t-item"><span>2024</span><div><h3>Первые скрипты</h3><p>Начинал с автоматизаций. Парсил всё, что плохо лежало.</p></div></div>
+      <div class="t-item"><span>2025</span><div><h3>Telegram-боты</h3><p>Telethon и aiogram. Рассылки, магазины, админки. Пошли первые заказы — и я не тормознул.</p></div></div>
+      <div class="t-item"><span>2026</span><div><h3>Фриланс</h3><p>Проекты под ключ: ТЗ, код, деплой, поддержка. Берусь — довожу.</p></div></div>
     </div>
   </section>
 
   <section id="contact" class="section reveal">
-    <p class="kicker">// 05 — контакт</p>
     <h2>Есть задача? Пиши</h2>
     <p class="muted">Отвечаю в течение дня. Опиши бота парой строк — оценю срок и цену.</p>
     <a class="tg-card" href="https://t.me/noddinoffcodeine" target="_blank" rel="noopener">
