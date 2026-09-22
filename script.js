@@ -1,55 +1,9 @@
-// ---------- animated grid background ----------
-const canvas = document.getElementById("grid");
-const ctx = canvas.getContext("2d");
-let W, H, pts;
-
-function resize() {
-  W = canvas.width = innerWidth;
-  H = canvas.height = innerHeight;
-  pts = Array.from({ length: Math.min(90, W / 16) }, () => ({
-    x: Math.random() * W,
-    y: Math.random() * H,
-    vx: (Math.random() - 0.5) * 0.35,
-    vy: (Math.random() - 0.5) * 0.35,
-  }));
-}
-addEventListener("resize", resize);
-resize();
-
-(function draw() {
-  ctx.clearRect(0, 0, W, H);
-  ctx.strokeStyle = "rgba(0,120,200,0.10)";
-  ctx.lineWidth = 1;
-  for (let x = 0; x < W; x += 56) {
-    ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
-  }
-  for (let y = 0; y < H; y += 56) {
-    ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
-  }
-  for (const p of pts) {
-    p.x += p.vx; p.y += p.vy;
-    if (p.x < 0 || p.x > W) p.vx *= -1;
-    if (p.y < 0 || p.y > H) p.vy *= -1;
-    ctx.fillStyle = "rgba(0,212,255,0.7)";
-    ctx.fillRect(p.x, p.y, 2, 2);
-  }
-  for (let i = 0; i < pts.length; i++) {
-    for (let j = i + 1; j < pts.length; j++) {
-      const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y;
-      const d = Math.hypot(dx, dy);
-      if (d < 130) {
-        ctx.strokeStyle = `rgba(0,150,255,${(1 - d / 130) * 0.25})`;
-        ctx.beginPath(); ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[j].x, pts[j].y); ctx.stroke();
-      }
-    }
-  }
-  requestAnimationFrame(draw);
-})();
+// ---------- (фон — CSS-аврора, canvas удалён) ----------
 
 // ---------- typing effect ----------
 const lines = [
   "pip install telethon && python bot.py",
-  "бот отвечает за 0.2 сек…",
+  "50к сообщений в сутки. Молча.",
   "деплой на VPS — done ✓",
 ];
 const typedEl = document.getElementById("typed");
